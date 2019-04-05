@@ -10,14 +10,16 @@ import lombok.NoArgsConstructor;
 @Table(name = "registration_items")
 @Data
 @NoArgsConstructor
-public class RegistrationItems implements java.io.Serializable {
+public class RegistrationItems {
 
 	private Integer regItemUid;
-	private RegitemSubsubtypes regitemSubsubtypes;
-	private RegitemSubtypes regitemSubtypes;
+	private Integer regitemSubsubtypes;
+	private Integer regitemSubtypes;
 	private Integer certificateNo;
 	private Integer trackingNo;
 
 
 
 }
+
+
