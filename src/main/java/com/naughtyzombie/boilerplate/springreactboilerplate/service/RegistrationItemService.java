@@ -17,12 +17,8 @@ public class RegistrationItemService {
     private RegistrationItemsRepository registrationItemsRepository;
 
     public List<RegistrationItems> getAllBooks() {
-        return bookRespository.findAll();
+        return registrationItemsRepository.findAll();
     }
 
-    public boolean addBook(Book book) {
-        Book save = bookRespository.save(book);
-
-        return save != null;
-    }
+   
 }
