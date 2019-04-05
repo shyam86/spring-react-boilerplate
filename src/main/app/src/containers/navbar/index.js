@@ -1,6 +1,6 @@
 /* @flow */
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
@@ -38,8 +38,8 @@ class AppNav extends React.Component<Props, State> {
     if (!signedIn) {
       return (
         <NavItem>
-          <NavLink>
-            <Link to="/signin">Sign In</Link>
+          <NavLink className="nav-link" href="/signin">
+            <span className="fa fa-list fa-lg" /> Sign In
           </NavLink>
         </NavItem>
       );
@@ -106,28 +106,28 @@ class AppNav extends React.Component<Props, State> {
   }
 
   render() {
-    const { roles, signedIn, username } = this.props.auth;
+    const { signedIn, username } = this.props.auth;
 
     return (
-      <Navbar color="dark" expand={true} fixed="top">
-        <NavbarBrand href="/" />
-        <Nav className="d-flex ml-auto left" horizontal="end" navbar>
-          {this.socketLink()}
-          {this.userLink(signedIn, username)}
-          {this.roleLink(signedIn, roles)}
-          <NavItem>
-            <NavLink>
-              <Link to="/">Home</Link>
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink>
-              <Link to="/about-us">About</Link>
-            </NavLink>
-          </NavItem>
-          {this.authLink(signedIn)}
-        </Nav>
-      </Navbar>
+      <React.Fragment>
+        <Navbar color="dark" dark expand={true} fixed="top" className="mb-5">
+          <div className="container">
+            <NavbarBrand href="/"> Home </NavbarBrand>
+            <Nav className="d-flex ml-auto" navbar>
+              {/* {this.socketLink()} */}
+              {/* {this.roleLink(signedIn, roles)} */}
+              <NavItem>
+                <NavLink className="nav-link" href="/about-us">
+                  <span className="fa fa-list fa-lg" /> About
+                </NavLink>
+              </NavItem>
+              {this.userLink(signedIn, username)}
+
+              {this.authLink(signedIn)}
+            </Nav>
+          </div>
+        </Navbar>
+      </React.Fragment>
     );
   }
 }

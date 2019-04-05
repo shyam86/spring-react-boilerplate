@@ -4,12 +4,13 @@
   "private": true,
   "devDependencies": {
     "flow-bin": "^0.80.0",
-    "react-scripts": "^1.0.17"
+    "react-scripts": "^2.1.5"
   },
   "dependencies": {
     "@stomp/stompjs": "^4.0.2",
     "axios": "^0.18.0",
     "bootstrap": "^4.0.0",
+    "http-proxy-middleware": "^0.19.1",
     "jwt-decode": "^2.2.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -30,16 +31,10 @@
     "eject": "react-scripts eject",
     "precommit": "lint-staged"
   },
-  "proxy": {
-    "/api": {
-      "target": "http://localhost:8080"
-    },
-    "/auth": {
-      "target": "http://localhost:8080"
-    },
-    "/socket": {
-      "target": "http://localhost:8080",
-      "ws": true
-    }
-  }
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
