@@ -13,10 +13,10 @@ public class RegistrationItems {
 
 	@Id
 	private Long regItemUid;
-	private Integer regitemSubsubtypes;
-	private Integer regitemSubtypes;
-	private Integer certificateNo;
-	private Integer trackingNo;
+	private Long regitemSubsubtypes;
+	private Long regitemSubtypes;
+	private Long certificateNo;
+	private Long trackingNo;
 
 
 

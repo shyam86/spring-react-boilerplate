@@ -26,5 +26,7 @@ public class RegistrationItemsService {
 	        return save != null;
 	}
 
-   
+	 public RegistrationItems findByTrackingNo(Long trackingNo) {
+	        return registrationItemsRepository.findByTrackingNo(trackingNo);
+	    }
 }

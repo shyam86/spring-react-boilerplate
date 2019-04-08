@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RegistrationItemsRepository extends JpaRepository<RegistrationItems, Long> {
+	
+	RegistrationItems findByTrackingNo(Long trackingNo);
 }
