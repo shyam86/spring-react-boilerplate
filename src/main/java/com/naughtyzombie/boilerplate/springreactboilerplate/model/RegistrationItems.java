@@ -1,7 +1,6 @@
 package com.naughtyzombie.boilerplate.springreactboilerplate.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RegistrationItems {
 
-	private Integer regItemUid;
+	@Id
+	private Long regItemUid;
 	private Integer regitemSubsubtypes;
 	private Integer regitemSubtypes;
 	private Integer certificateNo;

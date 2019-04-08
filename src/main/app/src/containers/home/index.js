@@ -1,6 +1,8 @@
 /* @flow */
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
+
 import type { AuthState } from "../../data/modules/auth";
 
 type Props = {
@@ -21,6 +23,13 @@ class Home extends React.Component<Props, State> {
     return (
       <div>
         <h1>You are successfully Logged in </h1>
+
+        <div className="container">
+            <div className="col-12 center">
+
+            <Link to="/equipmentswitch">
+Equipment Unit Switch</Link>            </div>
+        </div>
       </div>
     );
   }

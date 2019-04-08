@@ -30,5 +30,11 @@ public class RegistrationItemsResource {
 	public List<RegistrationItems> getAllRegistrationItems() {
 		return registrationItemsService.getAllRegistrationItems();
 	}
+	  @RequestMapping(path = "/addregistrations", method = POST)
+	    public List<RegistrationItems> addRegistrationItems(@RequestBody RegistrationItems registrationItems) {
+	        log.info("Book Add request {}", registrationItems);
+	        registrationItemsService.addRegistrationItems(registrationItems);
 
+	        return registrationItemsService.getAllRegistrationItems();
+	    }
 }
